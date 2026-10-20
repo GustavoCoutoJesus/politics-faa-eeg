@@ -1,0 +1,3 @@
+cd "DEFINE BIDS FOLDER LOCATION\code"
+
+python inspect_raw_free_filter.py "DEFINE BIDS FOLDER LOCATION\sourcedata"

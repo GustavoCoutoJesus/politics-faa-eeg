@@ -1,0 +1,23 @@
+Participant Tracking Data Description
+======================================
+
+Note: The datasets described here can be found in:
+
+- Statements & Faces 
+  https://openneuro.org/datasets/ds007688/versions/1.0.0
+
+- Dynamic Faces - combine eeg_biosemi and eeg_biosemi_pilot
+  https://doi.org/10.6084/m9.figshare.30971284.
+
+Participant Counts:
+-------------------
+- StatementsFaces (Sourcedata): 44 participants
+- StatementsFaces (Processed): 44 participants
+- DynamicFaces (Sourcedata): 62 participants
+- DynamicFaces (Processed): 55 participants
+
+Directory Structure & Logic:
+- The data generation scripts rely on a standard BIDS (Brain Imaging Data Structure) directory layout.
+- Sourcedata: In the 'sourcedata' directory, the folders are prefixed with 'sub-'. This identifies all participants initially collected.
+- Processed: After being successfully preprocessed, usable data can be found in 'derivatives/preprocessed' batch directory. 
+- Output: The accompanying CSV maps the participant attrition across these stages. However, the processed recordings are not necessarily ideal for analysis, and must still be filtered after a quality check.

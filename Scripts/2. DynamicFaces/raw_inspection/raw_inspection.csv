@@ -1,0 +1,64 @@
+Filename,Subject,Num_Bad_Channels,Bad_Channels,Interval_Length_mins,Bad_Data
+sub-001_MU_pilot_task-faces_eeg.bdf,sub-001_MU_pilot,0,,12.87,bad_data
+sub-002_MU_task-faces_eeg.bdf,sub-002_MU,9,"M2, PO8, PO4, TP8, FC6, FT8, F7, F4, T7",32.2,
+sub-002_MU_pilot_task-faces_eeg.bdf,sub-002_MU_pilot,1,T7,31.39,
+sub-003_MU_task-faces_eeg.bdf,sub-003_MU,16,"FC5, FC3, C5, C3, T7, TP7, CP5, CP3, P7, PO7, CPz, TP8, CP2, P4, PO4, O2",32.23,bad_data
+sub-003_MU_pilot_task-faces_eeg.bdf,sub-003_MU_pilot,1,AF8,29.28,
+sub-004_MU_task-faces_eeg.bdf,sub-004_MU,9,"F1, FC1, C4, CP6, P8, F6, PO7, C1, P5",34.5,bad_data
+sub-005_MU_task-faces_eeg.bdf,sub-005_MU,0,,32.58,bad_data
+sub-005_MU_pilot_task-faces_eeg.bdf,sub-005_MU_pilot,1,PO7,32.16,
+sub-006_MU_task-faces_eeg.bdf,sub-006_MU,0,,34.2,bad_data
+sub-006_MU_pilot_task-faces_eeg.bdf,sub-006_MU_pilot,7,"T7, FT8, FC6, AF7, F8, F6, AF8",26.65,
+sub-007_MU_task-faces_eeg.bdf,sub-007_MU,25,"CP5, PO3, P9, P5, P3, P1, Pz, CP1, P7, T7, FC5, F4, FC6, CP4, P4, P6, P10, P2, O2, EOGH, FT7, TP8, C4, F6, Fp1",31.13,
+sub-007_MU_pilot_task-faces_eeg.bdf,sub-007_MU_pilot,0,,32.48,
+sub-008_MU_task-faces_eeg.bdf,sub-008_MU,7,"P1, P3, CP4, CP2, Fz, P8, C3",36.92,bad_data
+sub-008_MU_pilot_task-faces_eeg.bdf,sub-008_MU_pilot,2,"AF8, F6",32.3,
+sub-009_MU_task-faces_eeg.bdf,sub-009_MU,3,"CP3, P9, T7",32.38,bad_data
+sub-009_MU_pilot_task-faces_eeg.bdf,sub-009_MU_pilot,0,,32.14,
+sub-010_MU_task-faces_eeg.bdf,sub-010_MU,0,,33.86,bad_data
+sub-010_MU_pilot_task-faces_eeg.bdf,sub-010_MU_pilot,1,PO4,32.25,
+sub-011_MU_task-faces_eeg.bdf,sub-011_MU,10,"PO4, O2, P8, T8, FT7, Fp1, AF7, TP8, P9, PO3",32.88,bad_data
+sub-011_MU_pilot_task-faces_eeg.bdf,sub-011_MU_pilot,4,"T7, T8, F6, F8",34.89,
+sub-012_MU_task-faces_eeg.bdf,sub-012_MU,5,"C6, CP4, CP2, P2, FT7",35.12,bad_data
+sub-012_MU_pilot_task-faces_eeg.bdf,sub-012_MU_pilot,0,,32.45,
+sub-013_MU_task-faces_eeg.bdf,sub-013_MU,0,,30.7,bad_data
+sub-014_MU_task-faces_eeg.bdf,sub-014_MU,7,"PO8, F7, F5, AF7, FT7, FC3, C5",35.92,
+sub-015_MU_task-faces_eeg.bdf,sub-015_MU,0,,0.03,bad_data
+sub-015_MU__task-faces_eeg.bdf,sub-015_MU_,8,"C4, T8, P4, O2, PO4, Iz, CP5, PO7",32.16,
+sub-016_MU_task-faces_eeg.bdf,sub-016_MU,4,"P9, T7, P1, TP8",34.34,
+sub-017_MU_task-faces_eeg.bdf,sub-017_MU,4,"P10, AF4, FC4, P1",31.15,
+sub-018_MU_task-faces_eeg.bdf,sub-018_MU,8,"P5, POz, Pz, AF7, C5, T8, AF8, CP6",33.62,bad_data
+sub-019_MU_task-faces_eeg.bdf,sub-019_MU,3,"F3, P3, Iz",32.11,
+sub-020_MU_task-faces_eeg.bdf,sub-020_MU,8,"FT7, FC3, C5, Cz, Iz, PO4, P2, T8",32.38,
+sub-021_MU_task-faces_eeg.bdf,sub-021_MU,0,,34.17,bad_data
+sub-022_MU_task-faces_eeg.bdf,sub-022_MU,6,"T7, P5, PO4, PO3, T8, TP8",32.08,
+sub-023_MU_task-faces_eeg.bdf,sub-023_MU,11,"P1, P5, T7, P4, Pz, F7, TP7, F4, T8, P9, CP4",33.84,
+sub-024_MU_task-faces_eeg.bdf,sub-024_MU,3,"CP1, CP5, FT7",33.73,
+sub-025_MU_task-faces_eeg.bdf,sub-025_MU,2,"POz, P2",32.71,
+sub-026_MU_task-faces_eeg.bdf,sub-026_MU,1,T7,32.81,
+sub-027_MU_task-faces_eeg.bdf,sub-027_MU,0,,32.58,
+sub-028_MU_task-faces_eeg.bdf,sub-028_MU,8,"P5, P1, CP3, Fp1, AF7, O1, P2, C3",35.16,bad_data
+sub-029_MU_task-faces_eeg.bdf,sub-029_MU,1,Oz,33.04,bad_data
+sub-030_MU_task-faces_eeg.bdf,sub-030_MU,2,"TP8, F6",32.62,bad_data
+sub-031_MU_task-faces_eeg.bdf,sub-031_MU,2,"P1, P9",31.66,
+sub-032_MU_task-faces_eeg.bdf,sub-032_MU,2,"F6, FC6",33.25,bad_data
+sub-033_MU_task-faces_eeg.bdf,sub-033_MU,2,"P8, AF7",32.64,
+sub-034_MU_task-faces_eeg.bdf,sub-034_MU,2,"FC5, PO3",33.27,
+sub-035_MU_task-faces_eeg.bdf,sub-035_MU,2,"CP3, P1",31.55,bad_data
+sub-036_MU_task-faces_eeg.bdf,sub-036_MU,4,"TP7, T7, F7, FT7",32.15,
+sub-037_MU_task-faces_eeg.bdf,sub-037_MU,0,,35.11,bad_data
+sub-038_MU_task-faces_eeg.bdf,sub-038_MU,2,"F3, P5",31.75,
+sub-039_MU_task-faces_eeg.bdf,sub-039_MU,2,"FT7, FC5",32.28,bad_data
+sub-040_MU_task-faces_eeg.bdf,sub-040_MU,2,"C5, Oz",32.24,bad_data
+sub-041_MU_task-faces_eeg.bdf,sub-041_MU,0,,32.12,bad_data
+sub-042_MU_task-faces_eeg.bdf,sub-042_MU,3,"P2, FC4, FT8",32.13,
+sub-043_MU_task-faces_eeg.bdf,sub-043_MU,2,"PO3, TP7",31.83,
+sub-044_MU_task-faces_eeg.bdf,sub-044_MU,4,"P5, T7, C5, FC5",31.9,
+sub-045_MU_task-faces_eeg.bdf,sub-045_MU,1,FC3,32.32,
+sub-046_MU_task-faces_eeg.bdf,sub-046_MU,3,"O2, F4, Oz",32.18,
+sub-047_MU_task-faces_eeg.bdf,sub-047_MU,5,"T7, Fp1, Fp2, AF8, FC3",36.43,
+sub-048_MU_task-faces_eeg.bdf,sub-048_MU,6,"T7, PO7, P5, P7, Fp1, AF7",30.15,
+sub-049_MU_task-faces_eeg.bdf,sub-049_MU,3,"P2, PO4, Oz",31.92,
+sub-050_MU_task-faces_eeg.bdf,sub-050_MU,4,"CP1, T7, FT8, AF3",33.77,
+sub-051_MU_task-faces_eeg.bdf,sub-051_MU,0,,29.82,bad_data
+sub-052_MU_task-faces_eeg.bdf,sub-052_MU,6,"T7, F3, AF7, CP3, FC3, Fp2",32.59,
