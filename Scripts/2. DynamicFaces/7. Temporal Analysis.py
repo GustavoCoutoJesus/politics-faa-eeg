@@ -1,8 +1,3 @@
-# %% #######################################################################################################################
-# The goal of this script is to run temporal bin analysis, where we test whether FAA has changed from beginning to end of tasks
-# Gustavo Couto de Jesus | @gustavocjesus.bsky.social | www.linkedin.com/in/gustavocj | https://github.com/GustavoCoutoJesus
-############################################################################################################################
-
 # %% Setup, Single-Trial Phase Extraction & Temporal Binning
 import os
 import mne
@@ -14,8 +9,9 @@ import statsmodels.formula.api as smf
 import scipy.stats as stats
 from patsy import dmatrix
 
-warnings.filterwarnings("ignore", module="statsmodels")
-warnings.filterwarnings("ignore", category=UserWarning, module="statsmodels")
+# initially found convergence warnings, so these should not be muted
+#warnings.filterwarnings("ignore", module="statsmodels")
+#warnings.filterwarnings("ignore", category=UserWarning, module="statsmodels")
 
 # ==============================================================================
 # Configuration & Paths
@@ -24,12 +20,12 @@ BATCH_NAME = "Batch_01_Emotion_VirtualCz_8-12Hz"
 FAA_METHOD = "diff"
 EXCLUSION_CRITERION = "Strict"  # Options: "Strict", "Lenient", or "None"
 
-PROJECT_FOLDER = Path("DEFINE YOUR FOLDER NAME HERE")
+PROJECT_FOLDER = Path("C:/Users/gcoutod/OneDrive - UvA/Amsterdam Team/Research/Projects - Gustavo/Politics_EEG/TYP/analysis")
 DERIVATIVES_DIR = PROJECT_FOLDER / 'bids_emotion' / 'derivatives'
 PROCESSED_DIR = DERIVATIVES_DIR / 'processed' / BATCH_NAME
 QC_DIR = DERIVATIVES_DIR / 'quality_check' / BATCH_NAME
 
-# Temporal Directory for simplified Emotion analysis
+# Temporal Directory for simplified Maaike Emotion analysis
 TEMPORAL_DIR = DERIVATIVES_DIR / 'temporal' / BATCH_NAME / FAA_METHOD
 TEMPORAL_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -138,18 +134,31 @@ def run_temporal_analysis(df, phase_col, task_label):
         "LMM": {"type": "mixedlm", "formula": f"{phase_col} ~ C(Time_Bin, Treatment('First_50'))", "groups": "Subject"}
     }
     
-    # 1. Selection Loop
+# 1. Selection Loop
     fit_results = []
     for name, params in models_to_test.items():
         try:
             if params["type"] == "ols":
                 model = smf.ols(params["formula"], data=df_eval).fit()
             else:
-                model = smf.mixedlm(params["formula"], data=df_eval, groups=df_eval[params["groups"]]).fit(
-                    reml=False, method='lbfgs', maxiter=500
-                )
+                # Catch warnings locally for LMM
+                import warnings
+                with warnings.catch_warnings(record=True) as w:
+                    warnings.simplefilter("always", category=UserWarning)
+                    
+                    model = smf.mixedlm(params["formula"], data=df_eval, groups=df_eval[params["groups"]]).fit(
+                        reml=False, method='lbfgs', maxiter=500
+                    )
+                    
+                    # Reject if optimizer flags non-convergence, issues a warning, or yields degenerate SEs
+                    if not model.converged or len(w) > 0 or model.bse.max() > 1000:
+                        warn_msg = w[0].message if len(w) > 0 else "Singular Hessian / Exploded SEs"
+                        print(f"  -> [!] {name} rejected due to convergence issues: {warn_msg}")
+                        raise ValueError("Convergence Failure")
+
             fit_results.append({'Model': name, 'AIC': model.aic, 'BIC': model.bic, 'LogLik': model.llf})
         except Exception:
+            # If it fails or is rejected, penalize its AIC so the other model wins
             fit_results.append({'Model': name, 'AIC': np.inf, 'BIC': np.inf, 'LogLik': np.nan})
             
     df_fits = pd.DataFrame(fit_results).sort_values(by='AIC').reset_index(drop=True)
@@ -196,7 +205,7 @@ def run_temporal_analysis(df, phase_col, task_label):
         'z_stat': z_stat, 'd': diff / resid_sd, 'p_value': p_raw
     }])
     
-    # 4. Export Outputs (CSV and LaTeX)
+    # --- 4. Export Outputs (CSV and LaTeX) ---
     prefix = f"{task_label}_{phase_col}_Overall"
     
     res_fixed.to_csv(TEMPORAL_DIR / f'FixedEffects_{prefix}.csv', index=False)
@@ -233,3 +242,5 @@ mod_static, emms_static, cont_static = run_temporal_analysis(df_master, 'Static_
 
 # 2. Dynamic Phase Analysis
 mod_dynamic, emms_dynamic, cont_dynamic = run_temporal_analysis(df_master, 'Dynamic_Value', 'DynamicPhase')
+
+# %%
